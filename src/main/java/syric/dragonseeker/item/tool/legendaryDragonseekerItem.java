@@ -31,6 +31,7 @@ public class legendaryDragonseekerItem extends dragonseekerGeneric {
     private static final boolean detectsCorpses = DragonseekerConfig.COMMON.legendary_detectsCorpses.get();
     private static final boolean detectsTame = DragonseekerConfig.COMMON.legendary_detectsTame.get();
 //    private static final int durability = DragonseekerConfig.COMMON.legendary_durability.get();
+    private static final boolean outputInChat = DragonseekerConfig.COMMON.legendary_outputInChat.get();
     private static final int durability = 512;
     private static final Rarity rarity = Rarity.RARE;
     private static final Item repairItem = IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get();
@@ -38,7 +39,7 @@ public class legendaryDragonseekerItem extends dragonseekerGeneric {
 
     //Constructor
     public legendaryDragonseekerItem() {
-        super(opDist,maxDist,minPing,maxPing,minSig,pow,minVol,maxVol,minPitch,maxPitch,negSound,pingSound,detectsCorpses,detectsTame,durability,rarity,repairItem, seekerType);
+        super(opDist,maxDist,minPing,maxPing,minSig,pow,minVol,maxVol,minPitch,maxPitch,negSound,pingSound,detectsCorpses,detectsTame,outputInChat,durability,rarity,repairItem, seekerType);
     }
 
     //Repairing

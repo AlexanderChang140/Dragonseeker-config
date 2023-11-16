@@ -42,6 +42,7 @@ public class dragonseekerGeneric extends Item {
     private boolean detectsTame;
 //    private int durability;
 //    private Rarity rarity;
+    private boolean outputInChat;
     private final Item repairItem;
     private final int seekerType;
     private boolean isDefault;
@@ -54,7 +55,7 @@ public class dragonseekerGeneric extends Item {
 //        );
 //    }
 
-    public dragonseekerGeneric(int opDistIn, int maxDistIn, double minPingIn, double maxPingIn, int minSigIn, double powIn, double minVolIn, double maxVolIn, double minPitchIn, double maxPitchIn, SoundEvent negSoundIn, SoundEvent pingSoundIn, boolean detectsCorpsesIn, boolean detectsTameIn, int durabilityIn, Rarity rarityIn, Item repairItemIn, int seekerTypeIn) {
+    public dragonseekerGeneric(int opDistIn, int maxDistIn, double minPingIn, double maxPingIn, int minSigIn, double powIn, double minVolIn, double maxVolIn, double minPitchIn, double maxPitchIn, SoundEvent negSoundIn, SoundEvent pingSoundIn, boolean detectsCorpsesIn, boolean detectsTameIn, boolean outputInChatIn, int durabilityIn, Rarity rarityIn, Item repairItemIn, int seekerTypeIn) {
         super(new Properties()
                 .stacksTo(1)
                 .tab(IceAndFire.TAB_ITEMS)
@@ -75,6 +76,7 @@ public class dragonseekerGeneric extends Item {
         pingSound = pingSoundIn;
         detectsCorpses = detectsCorpsesIn;
         detectsTame = detectsTameIn;
+        outputInChat = outputInChatIn;
 //        durability = durabilityIn;
 //        rarity = rarityIn;
         repairItem = repairItemIn;
@@ -186,6 +188,17 @@ public class dragonseekerGeneric extends Item {
 //                player.sendMessage(text, player.getUUID());
             }
         }
+
+        if (seekerType != 4 && outputInChat) {
+            String s = "";
+            if (closest != null) {
+                s = "Dragon found";
+            } else {
+                s = "No dragon found";
+            }
+            player.displayClientMessage(new TextComponent(s), false);
+        }
+
         if (seekerType == 4) {
             String s = "";
             if (closest != null) {
@@ -249,6 +262,7 @@ public class dragonseekerGeneric extends Item {
             //Other stats
             detectsCorpses = DragonseekerConfig.COMMON.basic_detectsCorpses.get();
             detectsTame = DragonseekerConfig.COMMON.basic_detectsTame.get();
+            outputInChat = DragonseekerConfig.COMMON.basic_outputInChat.get();
             isDefault = false;
 
         } else if (seekerType == 2) {
@@ -268,6 +282,7 @@ public class dragonseekerGeneric extends Item {
             //Other stats
             detectsCorpses = DragonseekerConfig.COMMON.epic_detectsCorpses.get();
             detectsTame = DragonseekerConfig.COMMON.epic_detectsTame.get();
+            outputInChat = DragonseekerConfig.COMMON.epic_outputInChat.get();
             isDefault = false;
 
         } else if (seekerType == 3) {
@@ -287,6 +302,7 @@ public class dragonseekerGeneric extends Item {
             //Other stats
             detectsCorpses = DragonseekerConfig.COMMON.legendary_detectsCorpses.get();
             detectsTame = DragonseekerConfig.COMMON.legendary_detectsTame.get();
+            outputInChat = DragonseekerConfig.COMMON.legendary_outputInChat.get();
             isDefault = false;
 
         } else if (seekerType == 4) {

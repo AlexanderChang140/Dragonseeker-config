@@ -30,6 +30,7 @@ public class epicDragonseekerItem extends dragonseekerGeneric {
     private static final boolean detectsCorpses = DragonseekerConfig.COMMON.epic_detectsCorpses.get();
     private static final boolean detectsTame = DragonseekerConfig.COMMON.epic_detectsTame.get();
 //    private static final int durability = DragonseekerConfig.COMMON.epic_durability.get();
+    private static final boolean outputInChat = DragonseekerConfig.COMMON.epic_outputInChat.get();
     private static final int durability = 256;
     private static final Rarity rarity = Rarity.RARE;
     private static final Item repairItem = Items.NETHERITE_INGOT;
@@ -38,7 +39,7 @@ public class epicDragonseekerItem extends dragonseekerGeneric {
 
     //Constructor
     public epicDragonseekerItem() {
-        super(opDist,maxDist,minPing,maxPing,minSig,pow,minVol,maxVol,minPitch,maxPitch,negSound,pingSound,detectsCorpses,detectsTame,durability,rarity,repairItem,seekerType);
+        super(opDist,maxDist,minPing,maxPing,minSig,pow,minVol,maxVol,minPitch,maxPitch,negSound,pingSound,detectsCorpses,detectsTame,outputInChat,durability,rarity,repairItem,seekerType);
     }
 
 }

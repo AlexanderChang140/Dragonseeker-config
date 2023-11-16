@@ -22,6 +22,7 @@ public class DragonseekerConfig {
         public final ForgeConfigSpec.ConfigValue<Boolean> basic_detectsCorpses;
         public final ForgeConfigSpec.ConfigValue<Boolean> basic_detectsTame;
 //        public final ForgeConfigSpec.ConfigValue<Integer> basic_durability;
+        public final ForgeConfigSpec.ConfigValue<Boolean> basic_outputInChat;
 
 
         //Epic Dragonseeker
@@ -40,6 +41,7 @@ public class DragonseekerConfig {
         public final ForgeConfigSpec.ConfigValue<Boolean> epic_detectsCorpses;
         public final ForgeConfigSpec.ConfigValue<Boolean> epic_detectsTame;
 //        public final ForgeConfigSpec.ConfigValue<Integer> epic_durability;
+        public final ForgeConfigSpec.ConfigValue<Boolean> epic_outputInChat;
 
 
         //Legendary Dragonseeker
@@ -58,6 +60,7 @@ public class DragonseekerConfig {
         public final ForgeConfigSpec.ConfigValue<Boolean> legendary_detectsCorpses;
         public final ForgeConfigSpec.ConfigValue<Boolean> legendary_detectsTame;
 //        public final ForgeConfigSpec.ConfigValue<Integer> legendary_durability;
+        public final ForgeConfigSpec.ConfigValue<Boolean> legendary_outputInChat;
 
 
         //Mythic Dragonseeker
@@ -123,6 +126,9 @@ public class DragonseekerConfig {
 //            basic_durability = builder
 //                    .comment("Durability of the item. Set to -1 to make it unbreakable. Default: 128")
 //                    .defineInRange("Basic: durability", 128, -1, 4096);
+            basic_outputInChat = builder
+                    .comment("Whether or not the dragonseeker outputs in chat if a dragon is in range, in addition to a sound. Default: false")
+                    .define("Basic: outputInChat", false);
             builder.pop();
 
 
@@ -167,6 +173,9 @@ public class DragonseekerConfig {
 //            epic_durability = builder
 //                    .comment("Durability of the item. Set to -1 to make it unbreakable. Default: 256")
 //                    .defineInRange("Epic: durability", 256, -1, 4096);
+            epic_outputInChat = builder
+                    .comment("Whether or not the dragonseeker outputs in chat if a dragon is in range, in addition to a sound. Default: false")
+                    .define("Epic: outputInChat", false);
             builder.pop();
 
 
@@ -211,6 +220,9 @@ public class DragonseekerConfig {
 //            legendary_durability = builder
 //                    .comment("Durability of the item. Set to -1 to make it unbreakable. Default: 512")
 //                    .defineInRange("Legendary: durability", 512, -1, 4096);
+            legendary_outputInChat = builder
+                    .comment("Whether or not the dragonseeker outputs in chat if a dragon is in range, in addition to a sound. Default: false")
+                    .define("Legendary: outputInChat", false);
             builder.pop();
 
 
